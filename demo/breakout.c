@@ -68,9 +68,9 @@ double new_color_capped(double c) {
 void brick_health_handler(Body *body1, Body *body2, Vector axis, void *aux) {
   RGBColor c = body_get_color(body2);
   RGBColor new_c = (RGBColor) {new_color_capped(c.r), new_color_capped(c.g), new_color_capped(c.b)};
-  printf("\nOld: %f %f %f\n", c.r, c.g, c.b);
+  //printf("\nOld: %f %f %f\n", c.r, c.g, c.b);
   body_set_color(body2, new_c);
-  printf("New: %f %f %f\n", new_c.r, new_c.g, new_c.b);
+  //printf("New: %f %f %f\n", new_c.r, new_c.g, new_c.b);
   if (new_c.r + new_c.g + new_c.b > COLOR_THRESHOLD) {
 
     body_remove(body2);
